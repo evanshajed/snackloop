@@ -1,0 +1,124 @@
+// Campaign List Styles
+.section-campaign-list{
+  margin:0 auto;
+  text-align: center;
+  .btn-load-more{
+    margin-top:2em;
+  }
+
+}
+
+.thumbnails-holder{
+  margin:em(-20) em(-10);
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  @include breakpoint(sp-portrait-landscape){
+    margin:em(-10) em(-5);
+  }
+
+  .fixed-block{
+    @include border-radius(5px);
+    padding:em(20) em(10);
+    @include breakpoint(sp-portrait-landscape){
+      padding:em(10) em(5);
+    }
+  }
+
+  .campaign-list-holder{
+    @include border-radius(5px);
+    background-color: $campaignListBackgroundColor;
+    .thumbnail-image{
+      @include border-radius(5px 5px 0px 0px);
+    }
+    .campaign-list-content{
+      padding:em(5) em(10);
+      .title-campaign-list{
+        color:$campaignListTitleColor;
+      }
+      .title-campaign-category{
+        color:$campaignListCategoryColor;
+      }
+      p{
+        color:$campaignListExcerptColor;
+      }
+      .btn-more{
+        font-size: em(14);
+        @include border-radius(5px);
+        margin:1em 0;
+      }
+    }
+    .campaign-list-share{
+      padding-bottom:em(5);
+      .block-list{
+        // overflow:hidden;
+      }
+
+      .col{
+        background-color: $linkColor;
+        text-align: center;
+      }
+
+      .title-campaign-share{
+        // background-color: $campaignListShareTitleBackground;
+        font-size: em(16);
+        text-align: center;
+        @include inline-block;
+        margin:0 auto;
+        margin-top: 25%;
+      }
+      .social-icons-holder{
+        width:100%;
+        padding:em(5) 0;
+        background-color: $campaignListShareIconsHolderBackground;
+        font-size: em(24);
+        > li{
+          @include inline-block-list-item(em(5));
+        }
+      }
+
+      /* Mobile Version */
+      @media (max-width: 480px) {
+        .b1 { width: 100%; }
+        .b2 { width: 100%; }
+      }
+      /* Tablet version */
+      @media (min-width: 768px) {
+        .b1 { width: 20%; }
+        .b2 { width: 80%; }
+      }
+
+      /* Desktop version */
+      @media (min-width: 960px) {
+        .b1 { width: 20%; }
+        .b2 { width: 80%; }
+      }
+    }
+  }
+}
+
+
+/* Phones */
+
+
+@media only screen and (max-width: 480px){
+  .fixed-block { width: 50%; }
+  .fixed-block:nth-child(2n+1) { clear: left; } /* force a new row every 2 blocks */
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px){
+  .fixed-block { width: $fullWidthContainer/3; }
+  .fixed-block:nth-child(3n+1) { clear: left; } /* force a new row every 2 blocks */
+}
+
+/* Tablet version: 4 blocks per row */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .fixed-block { width: 25%; }
+    .fixed-block:nth-child(4n+1) { clear: left; } /* force a new row every 2 blocks */
+}
+
+/* Desktop version: 4 blocks per row */
+@media (min-width: 960px) {
+    .fixed-block { width: 25%; }
+    .fixed-block:nth-child(4n+1) { clear: left; } /* force a new row every 4 blocks */
+}

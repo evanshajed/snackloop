@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>General Information page</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- SnackLoop App css -->
+  <link href="css/app.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <div id="wrap">
+    <!-- Main Header -->
+    <header class="main-header" role="banner">
+      <nav class="navbar navbar-fixed-top" role="navigation">
+        <div class="container header-container">
+          <div class="row">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="ittf-menu2"></span>
+              </button>
+              <a class="navbar-brand brand-logo" href="index.html">Snackloop</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse col-md-6">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Campaigns <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+                <li><a href="account-activity.html">Account Activity</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-3 col-md-2 nav-user pull-right">
+              <ul class="nav nav-pills">
+                <li class="pull-right">
+                  <a id="userDropDownMenu" class="btn btn-login user-in" href="#" data-toggle="dropdown"><img src="img/user-thumbnail.jpg" alt="" class="user-thumb"><span class="icon-arrow"><span class="ittf-arrow-down2" aria-hidden="true"></span></span></a>
+                  <ul class="dropdown-menu dropdown-user-menu pull-right" role="menu" aria-labelledby="userDropDownMenu">
+                    <li role="presentation" class="dropdown-header">Shajed Evan</li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="general-info.html">Profile</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="payment.html">Account</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="invoice.html">Invoice</a></li>
+                    <li role="presentation" class="divider"></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="ittf-switch" aria-hidden="true"></span> <span class="menu-text">Log Out</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- #Main Header -->
+
+    <!-- Main Content Holder -->
+    <div class="main-container" role="main">
+      <!-- Main Section Header -->
+      <h1 class="title-page">General Info</h1>
+      <div class="container">
+        <div class="row">
+          <!-- User badge Section -->
+          <div class="col-md-4">
+            <div class="section-user section-user-badge">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="badge-thumb">
+                    <img src="img/user-thumbnail-big.jpg" alt="Internet Users" class="img-rounded img-responsive">
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="badge-content">
+                    <h3 class="title-section">Shajed Evan</h3>
+                    <p>Front-End Developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- #User Section -->
+          <!-- General Profile Section -->
+          <div class="col-md-8">
+            <div class="section-user section-profile-info">
+              <ul class="nav nav-tabs">
+                    <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
+                    <li><a href="#password" data-toggle="tab">Password</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane active fade in" id="profile">
+                      <form role="form">
+                        <div class="form-group">
+                          <label for="firstNameInput">First Name</label>
+                          <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                          <label for="lastNameInput">Last Name</label>
+                          <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                          <label for="addressInput">Address</label>
+                          <textarea id="addressInput" class="form-control" rows="3" placeholder="Your Address"></textarea>
+                        </div>
+                        <div class="form-group button-group">
+                          <div class="row">
+                            <div class="col-md-2">
+                              <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                            <div class="col-md-2">
+                              <button type="submit" class="btn btn-danger">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+
+                      </form>
+                    </div>
+                    <div class="tab-pane fade" id="password">
+                      <form role="form">
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-group button-group">
+                          <div class="row">
+                            <div class="col-md-2">
+                              <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                            <div class="col-md-2">
+                              <button type="submit" class="btn btn-danger">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!-- #General Profile Section -->
+        </div>
+      </div>
+    </div>
+    <!-- #Main Content Holder -->`
+  </div>
+  <!-- Footer Section -->
+  <footer id="footer" class="main-footer">
+    <div class="container">
+      <div class="row">
+        <!-- Footer Navigation -->
+        <div class="col-md-9 col-xs-12">
+          <nav class="nav-footer">
+            <ul class="nav nav-pills">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- #Footer Navigation -->
+
+        <!-- Social Icons -->
+        <div class="col-md-3 col-xs-12">
+          <ul class="nav nav-pills nav-social">
+            <li><a href="#" class="btn-facebook"><span class="ittf-facebook3 social-icons-footer" aria-hidden="true"></span></a></li>
+            <li><a href="#" class="btn-twitter"><span class="ittf-twitter3 social-icons-footer" aria-hidden="true"></span></a></li>
+          </ul>
+        </div>
+        <!-- #Social Icons -->
+      </div>
+    </div>
+  </footer>
+  <!-- #Footer Section -->
+
+  <!-- Log In Modal -->
+  <div id="full-width" class="modal container fade" tabindex="-1" style="display: none;" role="dialog">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3 class="modal-title">Get In</h3>
+    </div>
+    <div class="modal-body">
+      <p class="big-content">Start sharing contents with <span class="logo"><span class="first">Snack</span><span class="second">loop</span></span> and start making money!!</p>
+      <hr>
+      <div class="row">
+        <!-- User SignIn -->
+        <div class="col-sm-6 col-md-6 modal-signin">
+          <h4 class="title-signup">Get inside <strong><span class="logo"><span class="first">Snack</span><span class="second">loop</span></span></strong> using your Facebook or Twitter account</h4>
+          <!-- Sign In with Social Media -->
+          <ul class="hlist">
+            <li><a href="#" class="btn-facebook"><span class="ittf-facebook3 icon" area-hidden="true"></span><span class="content"><span class="first">Sign In</span> <span class="second">With Facebook Account</span></span></a></li>
+            <li><a href="#" class="btn-twitter"><span class="ittf-twitter3 icon" aria-hidden="true"></span><span class="content"><span class="first">Sign In</span><span class="second">With Twitter Account</span></span></a></li>
+          </ul>
+          <!-- #Sign In with Social Media -->
+        </div>
+
+        <!-- Form Login -->
+        <div class="col-sm-6 col-md-6">
+          <form class="form-signin">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <input type="text" class="form-control" placeholder="Email address" autofocus>
+            <input type="password" class="form-control" placeholder="Password">
+            <label class="checkbox">
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+    </div>
+  </div>
+  <!-- #Log In Modal -->
+
+  <!-- All the JavaScipt sources -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery/jquery.min.js"><\/script>')</script>
+  <!-- Latest compiled and minified JavaScript for Bootstrap 3 -->
+  <script src="js/bootstrap.min.js"></script>
+
+<script src="js/plugins.js"></script>
+  <script type="text/javascript">
+      $(window).on('load', function () {
+
+          $('.selectpicker').selectpicker({
+              'selectedText': 'cat'
+          });
+
+          // $('.selectpicker').selectpicker('hide');
+      });
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+.title-featured{
+  text-transform: uppercase;
+  text-align:center;
+  font-size: em(20);
+  .line-1,.line-2{
+    display:block;
+  }
+  .line-1{
+    @include font-lobster();
+    font-size: em(20);
+    color:$featuredLightColor;
+  }
+  .line-2{
+    @include font-dense();
+    font-size: em(120);
+    color:$featuredDarkColor;
+  }
+}
+
+.section-user .title-featured{
+  .line-1{
+    @include font-lobster();
+    font-size: em(20);
+    color:$linkColor;
+  }
+  .line-2{
+    @include font-dense();
+    font-size: em(120);
+    color:$baseTitleColor;
+  }
+}
+
+.title-section-main,.title-page{
+  margin-top: 0;
+  margin-bottom: em(24);
+  position: relative;
+  @include font-dense();
+  text-align: center;
+  font-size: em(48);
+  padding: em(5) em(8);
+  background-color: $sectionMainTitleBackground;
+  text-transform: uppercase;
+  color:$sectionMainTitleColor;
+  border-bottom:1px solid $sectionMainTitleBorderColor;
+
+  &:before{
+    content:"";
+    @include inline-block;
+    width: 0;
+    height:0;
+    border-left: 22px solid transparent;
+    border-right: 22px solid transparent;
+    border-top: 22px solid $sectionMainTitleBorderColor;
+    position: absolute;
+    left: 50%;
+    margin-left: -22px;
+    margin-top: 12px;
+    bottom:-22px;
+  }
+  &:after{
+    content:"";
+    @include inline-block;
+    width: 0;
+    height:0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid $sectionMainTitleBackground;
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    margin-top: 12px;
+    bottom:-20px;
+  }
+}
+
+.title-page{
+  background-color:transparent;
+  // padding-top: em(35);
+}
+
+.title-section{
+  color:$baseTitleColor;
+  text-transform: uppercase;
+}
+
+.title-signup{
+  font-size:em(24);
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(255,255,255,1);
+  font-weight:normal;
+  .logo{
+    font-size:em(24);
+    text-transform:none;
+  }
+}
+
+.title-campaign-list{
+  // @include font-droid-normal();
+  font-size: em(20);
+  color:$campaignListTitleColor;
+  margin:em(5) 0px;
+}
+.title-campaign-category{
+  font-size: em(14);
+  color:$campaignListCategoryColor;
+}
+
+.title-campaign-share{
+  @include font-droid-normal();
+  margin:0 auto;
+  color:$white;
+}

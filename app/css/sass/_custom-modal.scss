@@ -1,0 +1,19 @@
+// Custom Modal Style
+
+.big-content{
+  font-size: 2em;
+  text-align: center;
+}
+.modal-signin{
+  text-align: center;
+
+  .title-signup{
+    margin-bottom: 2em;
+  }
+  ul.hlist{
+    li{
+      padding-left:1em;
+      padding-right:1em;
+    }
+  }
+}

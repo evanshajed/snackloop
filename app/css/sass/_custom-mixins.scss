@@ -1,0 +1,244 @@
+// Custom Font Mixin
+@mixin font-droid-normal(){
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 400;
+}
+@mixin font-droid-bold(){
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 700;
+}
+@mixin font-lobster(){
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+}
+@mixin font-dense(){
+  font-family: 'denseregular', sans-serif;
+  font-weight: normal;
+}
+
+// Retina Image Mixing
+@mixin image-2x($image) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+  }
+}
+
+/* ---------------------------------------------------------- */
+/*                                                            */
+/* A media query that captures:                               */
+/*                                                            */
+/* - Retina iOS devices                                       */
+/* - Retina Macs running Safari                               */
+/* - High DPI Windows PCs running IE 8 and above              */
+/* - Low DPI Windows PCs running IE, zoomed in                */
+/* - Low DPI Windows PCs and Macs running Firefox, zoomed in  */
+/* - Android hdpi devices and above                           */
+/* - Android tvdpi devices, including Google Nexus 7          */
+/* - Chrome running on high DPI Macs and PCs                  */
+/* - Opera running on high DPI Macs, PCs and mobile devices   */
+/*                                                            */
+/* Please note that that this code assumes you'll swap a      */
+/* 2× version of your images. If you'd like to supply         */
+/* finer increments, other thresholds might be appropriate.   */
+/*                                                            */
+/* A test for CSS pixel densites can be found here:           */
+/* http://bjango.com/articles/min-device-pixel-ratio/         */
+/*                                                            */
+/*                                  @marcedwards from @bjango */
+/*                                                            */
+/* ---------------------------------------------------------- */
+@mixin breakpoint($hdpi){
+  @media  only screen and (-webkit-min-device-pixel-ratio: 1.3),
+    only screen and (-o-min-device-pixel-ratio: 13/10),
+    only screen and (min-resolution: 120dpi)
+    {
+      @content;
+    }
+}
+
+// Image Sprite with Retina
+
+@mixin retina-sprite-background($name,$normal,$retina){
+  background-repeat: no-repeat;
+  background-image: sprite-url($normal);
+  background-position: sprite-position($normal,$name);
+  height:image-height(sprite-file($normal, $name));
+  width: image-width(sprite-file($normal, $name));
+
+  // Media Query for retina
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+
+          background-image: sprite-url($retina);
+          background-position: 0 round(nth(sprite-position($retina, $name), 2) / 2);
+          height:round(image-height(sprite-file($retina, $name)) / 2);
+          width: round(image-width(sprite-file($retina, $name)) /2 );
+
+          // treat the @2x retina sprite sheet as 50% wide for double resolution upon display
+          $double-width:ceil(image-width(sprite-path($retina)) / 2);
+          $auto-height:auto;
+          @include background-size($double-width $auto-height);
+         }
+}
+
+
+/*
+ * By Shajed Evan @evanshajed
+ * Concept by: CHRIS COYIER @chriscoyier
+*/
+// Breakpoints
+@mixin breakpoint($point) {
+
+  /* Smartphones (portrait and landscape) ----------- */
+  @if $point == sp-portrait-landscape {
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) { @content; }
+  }
+
+  /* Smartphones (landscape) ----------- */
+  @if $point == sp-landscape {
+    @media only screen and (min-width: 321px) { @content; }
+  }
+
+  /* Smartphones (portrait) ----------- */
+  @else if $point == sp-portrait {
+    @media only screen and (max-width: 320px) { @content; }
+  }
+
+  /* Generic Phones and Tabs ----------- */
+  @else if $point == sp-generic {
+    @media only screen and (max-width : 990px) { @content; }
+  }
+
+  /* iPads (portrait and landscape) ----------- */
+  @else if $point == ipad-portrait-landscape {
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) { @content; }
+  }
+
+  /* iPads (landscape) ----------- */
+  @else if $point == ipad-landscape {
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) { @content; }
+  }
+
+  /* iPads (portrait) ----------- */
+  @else if $point == ipad-portrait {
+    @media only screen and (min-device-width : 768px) and (max-device-width : 976px) and (orientation : portrait) { @content; }
+  }
+
+  /* Desktops and laptops ----------- */
+  @else if $point == desktop-laptops {
+    @media only screen and (min-width : 1224px) { @content; }
+  }
+  /* Generic Big Screens ----------- */
+  @else if $point == large-generic-screens {
+    @media only screen and (min-width : 992px) { @content; }
+  }
+
+  /* Large Screens ----------- */
+  @else if $point == large-screens {
+    @media only screen and (min-width : 1824px) { @content; }
+  }
+
+  /* iPhone 4 ----------- */
+  @else if $point == iPhone-4 {
+    @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5)  { @content; }
+  }
+}
+
+/* How to use it? */
+
+/* Smartphones (portrait and landscape) ----------- */
+// @include breakpoint(sp-portrait-landscape) { width: 95%; }
+
+/* Smartphones (landscape) ----------- */
+// @include breakpoint(sp-landscape) { width: 92%; }
+
+// UTILITY MIXINS
+// --------------------------------------------------
+
+// Horizontal List
+// ----------------
+@mixin horizontal-list{
+  @include inline-block;
+  margin:0 auto;
+  padding:0;
+}
+ul.hlist{
+    @include horizontal-list();
+    text-align: center;
+    > li{
+        @include inline-block-list-item(1em);
+        &:first-child{
+            padding-left: 0;
+        };
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}

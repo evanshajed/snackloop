@@ -1,0 +1,12 @@
+// Custom Dropdown Menu
+.dropdown-user-menu{
+  text-align:left;
+  padding-top: 0;
+  .dropdown-header{
+    background-color: $baseTitleColor;
+    color:$white;
+    @include border-radius(4px 4px 0px 0px);
+    @include font-droid-normal();
+    font-size:em(18);
+  }
+}

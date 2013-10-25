@@ -1,0 +1,136 @@
+// Main Header and Top Navigation Styles
+
+.main-header{
+  .header-container{
+    padding-top: 5px;
+    background-color:$headerBackgroundColorGrad;
+    @include background-image(linear-gradient($headerBackgroundColor,$headerBackgroundColorGrad,$headerBackgroundColorGrad));
+
+    // Border radius
+    @include border-radius(0px 0px 4px 4px);
+    @include box-shadow(0px 1px 1px 0px rgba(149,165,166,0.5));
+    text-align: center;
+    .navbar-collapse{
+      @media (min-width: 992px){
+        left:50%;
+        margin-left:percentage(-(6 / $grid-columns)) + 20%;
+        text-align: left;
+        // float: none;
+        // display: inline-block !important;
+      }
+    }
+  }
+  .navbar{
+    padding:0 5px;
+    border:0;
+    .container{
+      .navbar-header{
+        .navbar-toggle{
+          margin-right: 10px;
+          margin-left: 25px;
+          padding:2px 8px;
+          background-color:$headerToggleButtonColor;
+          border:1px solid $linkColor;
+          @include box-shadow(0 1px 1px $white);
+          span{
+            font-size: 16px;
+            color:$white;
+          }
+        }
+      }
+      .navbar-brand{
+        @media (min-width: $grid-float-breakpoint) {
+          margin-left: $navbar-padding-horizontal;
+        }
+      }
+    }
+  }
+  .brand-logo{
+    @include size(193px 58px);
+    background: url(../img/logo/snackloop-logo.png);
+    @include image-2x("../img/logo/snackloop-logo@2x.png");
+    background-repeat: no-repeat;
+    background-size:193px 58px;
+    @include hide-text;
+    @include image-rendering (auto);
+    @include breakpoint(sp-generic){
+      @include size(150px 45px);
+      background-size:100%;
+    }
+  }
+  .nav-user{
+    top: -10px;
+    @include breakpoint(sp-generic) {
+      position: absolute;
+      right: 60px;
+        .nav-pills{
+          float: right;
+        }
+    }
+    @include breakpoint(sp-portrait-landscape){
+      right: 40px;
+    }
+    .nav-pills{
+      .btn{
+        font-size: em(18);
+        font-weight: 400;
+        padding: 5px;
+
+        &.btn-login{
+          color:$white;
+          background-color:$linkColor;
+          @include border-radius(0px 0px 4px 4px);
+          @include breakpoint(sp-generic) {
+            padding: 20px 4px 12px 4px;
+            margin-top: -0.1em;
+            right: 10px;
+          }
+          @include breakpoint(large-generic-screens) {
+            padding: 30px 6px 12px 6px;
+            margin-top: -0.5em;
+            position: absolute;
+            right: 10px;
+          }
+          span.user-icon{
+            @include inline-block;
+            @include size(20px 21px);
+            background:url(../img/badges/nav-user-light-badge.png) no-repeat;
+            background-size:20px 21px;
+            @include image-2x("../img/badges/nav-user-light-badge@2x.png");
+            @include image-rendering(optimizeSpeed);
+          }
+          span.user-text{
+            display: block;
+            font-size: em(14);
+            line-height:0.8;
+            text-shadow:0 1px 1px rgba(0,0,0,0.3);
+            font-weight:700;
+          }
+          &.user-in{
+            margin-top: 15px;
+            @include border-radius(4px);
+            background-color: $linkColor;
+            padding:2px 5px 2px 2px;
+            position: relative;
+            @include breakpoint(sp-generic){
+              padding:2px;
+            }
+            overflow: hidden;
+            .user-thumb{
+              @include inline-block;
+              @include size(32px 32px);
+              float: left;
+              @include border-radius(4px);
+              margin-right: em(5);
+            }
+            .icon-arrow{
+              @include inline-block;
+              margin-top: 10px;
+              font-size:em(10);
+            }
+          }
+        }
+      }
+    }
+  }
+}

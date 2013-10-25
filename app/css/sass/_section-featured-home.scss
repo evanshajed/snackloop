@@ -1,0 +1,47 @@
+// Featured Home Section Styles
+.section-featured-home{
+  // margin-top: em(-70);
+  background:url(../img/background/featured-header-background.jpg) no-repeat;
+  background-position: center;
+  position: relative;
+
+  .container{
+    padding-top: em(120);
+  }
+
+
+
+    /* Mobile Version */
+    @media (min-width: 976px) {
+      .handheld-iphone{
+      @include inline-block;
+
+      height: 450px;
+      background: url(../img/background/iphone-handheld.png) no-repeat;
+      background-size: 100%;
+      overflow: hidden;
+      //margin-bottom: -10px;
+      background-position: right -22px;
+      // margin-top: -20px;
+      }
+    }
+    @media (max-width: 1199px) and (min-width: 992px){
+        .handheld-iphone{
+          background-position: right 10px;
+          margin-bottom: -10px;
+          background-size: cover;
+        }
+    }
+  .section-featured{
+    text-align:center;
+
+    ul.hlist{
+      margin-top: 5.5em;
+
+      li{
+        margin:0;
+        padding:0 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "sass-bootstrap",
+  "version": "3.0.0",
+  "main": ["./app/js/bootstrap.js", "./app/css/bootstrap.css"],
+  "ignore": [
+      "**/.*",
+      "node_modules",
+      "components"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.0"
+  }
+}

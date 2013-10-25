@@ -1,0 +1,85 @@
+// footer section
+
+.main-footer{
+  padding-top:10px;
+
+  .nav-pills.nav-social{
+    float: right;
+    > li{
+      margin:0 em(10);
+      > a{
+        font-size:em(32);
+        padding: 5px;
+        line-height: 1px;
+        border-radius:200px;
+        background-color: $footerSocialBorderColor;
+        @include box-shadow(none);
+        .ittf-facebook3{
+          color:$footerFacebookColor;
+        }
+        .ittf-twitter3{
+          color:$footerTwitterColor;
+        }
+
+        &:hover{
+          background-color: $white;
+        }
+      }
+    }
+  }
+  .btn-facebook,.btn-twitter{
+    @include inline-block;
+    width:100%;
+  }
+}
+.nav-footer{
+  .nav {
+    margin-bottom: 0;
+    padding-left: 0; // Override default ul/ol
+    list-style: none;
+    font-size:em(16);
+    @include clearfix();
+
+    > li {
+      position: relative;
+      display: block;
+
+      > a {
+        position: relative;
+        display: block;
+        padding: $nav-link-padding;
+        color:$footerNavLinkColor;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          background-color: $footerLinkBackgroundColor;
+          color:$white;
+        }
+      }
+    }
+
+    .nav-pills {
+      > li {
+        float: left;
+
+        // Links rendered as pills
+        > a {
+          border-radius: 0px;
+        }
+        + li {
+          margin-left: 2px;
+        }
+
+        // Active state
+        &.active > a {
+          &,
+          &:hover,
+          &:focus {
+            color:darken($footerNavLinkColor,5%);
+            background-color: darken($footerBackgroundColor,10%);
+          }
+        }
+      }
+    }
+  }
+}

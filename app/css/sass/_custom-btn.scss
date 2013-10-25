@@ -1,0 +1,115 @@
+// Button Styles
+
+.btn{
+  @include font-droid-bold();
+}
+.btn-primary {
+  @include button-variant($white,$primaryButtonColor,$primaryButtonBorderColor);
+}
+.btn-lg{
+  padding:em(5) em(30);
+  font-size: em(18);
+  text-shadow: 0 1px 1px rgba(1,1,1,0.4);
+}
+.btn-how{
+  // @include size(42);
+  @include button-variant($featuredDarkColor,$actionButtonBackgroundColor,$actionButtonBackgroundBorderColor);
+  @include inline-block;
+  @include border-radius(999px);
+  padding: 2em 0.6em;
+  text-align: center;
+  line-height: 0;
+  margin: 1.3em;
+  // color:$featuredDarkColor;
+  @include font-droid-bold();
+  font-size:em(16);
+  text-transform:uppercase;
+  // background-color: $actionButtonBackgroundColor;
+  border-width:5px;
+}
+
+.btn.btn-more{
+  @include button-variant($white,$primaryButtonColor,$primaryButtonBorderColor);
+  text-transform:uppercase;
+  @include font-droid-bold();
+  text-shadow:0 1px 1px rgba(1,1,1,0.2);
+  @include border-radius(16px);
+}
+
+.btn-signup{
+  @include button-variant($white,$linkColor,$signupButtonBorderColor);
+  text-transform:uppercase;
+  font-size:em(18);
+  padding:em(6) em(48);
+  text-shadow:0 1px 1px rgba(1,1,1,0.2);
+  letter-spacing: 1px;
+}
+
+.btn-load-more{
+  @extend .btn-signup;
+}
+
+// Social Sign In Buttons
+.btn-facebook{
+  @include inline-block;
+  width:200px;
+  overflow: hidden;
+  padding:em(10) em(30);
+  @include border-radius(60px);
+  // Background
+  background-color: $facebookBadgeBackgroundColor;
+  color:$white;
+  @include box-shadow(inset 0px 1px 3px 0px rgba(255, 255, 255, 0.37),0px 1px 3px 0px rgba(0, 0, 0, 0.4));
+
+  .ittf-facebook3.icon{
+    @include inline-block;
+    float:left;
+    font-size:em(32);
+    color:$featuredDarkColor;
+    padding: em(3);
+    background-color:darken($facebookIconBackgroundColor,5%);
+    @include border-radius(200px);
+    margin-left: -15px;
+  }
+  .content{
+    @include inline-block;
+    text-align: left;
+    text-shadow:0 1px 1px rgba(0,0,0,0.4);
+    font-size:em(18);
+    margin-left: 5px;
+    .first{
+      font-size:em(18);
+      font-weight:600;
+    }
+    .second{
+      font-size:em(12);
+    }
+  }
+  &:hover{
+    background-color: darken($facebookBadgeBackgroundColor,10%);
+    color:$white;
+    .ittf-facebook.icon{
+      background-color:darken($facebookIconBackgroundColor,10%);
+    }
+  }
+}
+
+.btn-twitter{
+  @extend .btn-facebook;
+  background-color: $twitterBadgeBackgroundColor;
+  .ittf-twitter3.icon{
+    @include inline-block;
+    float:left;
+    font-size:em(32);
+    color:$featuredDarkColor;
+    padding: em(3);
+    background-color:$twitterIconBackgroundColor;
+    @include border-radius(200px);
+  }
+  &:hover{
+    background-color: darken($twitterBadgeBackgroundColor,10%);
+    .ittf-facebook.icon{
+      background-color:darken($twitterIconBackgroundColor,10%);
+    }
+  }
+}

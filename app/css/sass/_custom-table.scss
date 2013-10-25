@@ -1,0 +1,14 @@
+// Custom Table Styles
+.activity-table{
+  .table-sub-row{
+    background-color: $featuredLightColor;
+  }
+  .table-footer-row{
+    @include font-droid-bold();
+    background-color: $signupButtonBorderColor;
+    color:$white;
+    td+td{
+      background-color: darken($signupButtonBorderColor,10%);
+    }
+  }
+}
